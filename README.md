@@ -1,1 +1,4 @@
-# JS_Components
+### Javascript Documentation
+
+[Typescript](https://www.typescriptlang.org/)
+
