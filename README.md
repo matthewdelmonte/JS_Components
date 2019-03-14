@@ -12,3 +12,8 @@
 - Installed with NPM package (Node.js)
 - Supports ES6 Syntax
 - Watch mode to auto compile current file or select files `$ tsc <file.ts> -w`
+
+| Node-fetch | Request | Other|
+|-----------|:---------:|:--------:|
+| NPM | NPM | NPM |
+| Yes | Yes | N/A |
