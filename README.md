@@ -14,6 +14,8 @@
 - Supports ES6 Syntax
 - Watch mode to auto compile current file or select files `$ tsc <file.ts> -w`
 
+## API Testing Information
+
 | Node-fetch | Request | Other|
 |-----------|:---------:|:--------:|
 | NPM | NPM | NPM |
