@@ -1,5 +1,6 @@
-### Javascript Documentation
+# Javascript Documentation
 
+## TypeScript Information
 [Typescript](https://www.typescriptlang.org/)
 
 [Traversy Media Tutorial](https://www.youtube.com/watch?v=rAy_3SlqT-E)
