@@ -10,7 +10,8 @@
 - Compiles .ts files to .js
 - Installed with NPM package (Node.js)
 - Supports ES6 Syntax
-- Watch mode to auto compile current file or select files
 ```
-$ tsc <file.ts> -w
+- Watch mode to auto compile current file or select files
+
+tsc <file.ts> -w
 ```
