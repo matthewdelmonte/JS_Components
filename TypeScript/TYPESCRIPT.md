@@ -28,7 +28,7 @@ https://webpack.js.org/
 
 webpack tutorial
 ```html
-https://medium.com/javascript-training/beginner-s-guide-to-webpack-b1f1a3638460
+https://medium.com/javascript-training/
 ```
 
 Install globally
