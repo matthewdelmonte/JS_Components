@@ -3,6 +3,8 @@
 [Typescript](https://www.typescriptlang.org/)
 [Webpack](#Webpack)
 
+## TypeScript
+
 [Traversy Media Tutorial](https://www.youtube.com/watch?v=rAy_3SlqT-E)
 1. Superset of JavaScript developed by Microsoft
 2. Static Type Checking
@@ -32,6 +34,10 @@ npm i webpack -g
 Install webpack CLI
 ```
 npm install -D webpack-cli
+
+or
+
+npm install -g webpack-cli
 ```
 
 Uninstall Webpack
