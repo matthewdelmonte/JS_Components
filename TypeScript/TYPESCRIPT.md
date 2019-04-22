@@ -45,4 +45,8 @@ Uninstall Webpack
 npm uninstall webpack
 ```
 
+run build (-o = output of bundle.js)
+```
+webpack app.js -o bundle.js
+```
 
