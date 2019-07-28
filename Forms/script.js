@@ -1,9 +1,9 @@
 const address = document.getElementById('address')
-const name = document.getElementById('name')
 const email = document.getElementById('email')
-const form = document.getElementById('form')
-const zip = document.getElementById('zip')
 const errorElement = document.getElementById('error')
+const form = document.getElementById('form')
+const name = document.getElementById('name')
+const zip = document.getElementById('zip')
 
 form.addEventListener('submit', (e) => {
     let messages = []
