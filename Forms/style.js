@@ -3,6 +3,7 @@ const name = document.getElementById('name')
 const email = document.getElementById('email')
 const form = document.getElementById('form')
 const zip = document.getElementById('zip')
+const errorElement = document.getElementById('error')
 
 form.addEventListener('submit', (e) => {
     let messages = []
@@ -29,7 +30,7 @@ form.addEventListener('submit', (e) => {
     if (zip.value.length >= 6) {
         messages.push('Please enter correct Zip Code')
     }
-    
+
     if (messages.length > 0) {
         e.preventDefault()
         errorElement.innerText = messages.join(', ')
