@@ -7,11 +7,11 @@ const zip = document.getElementById('zip')
 
 form.addEventListener('submit', (e) => {
     let messages = []
-    if (address.value.length <= 10) {
+    if (address.value.length < 10) {
         messages.push('Address must be longer than 10 characters')
     }
 
-    if (address.value.length >= 25) {
+    if (address.value.length > 25) {
         messages.push('Address must be less than 25 characters')
     }
 
