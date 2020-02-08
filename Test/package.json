@@ -1,7 +1,7 @@
 {
-  "name": "test",
+  "name": "newtest",
   "version": "1.0.0",
-  "description": "",
+  "description": "replacing old test",
   "main": "app.js",
   "dependencies": {
     "webpack": "^4.30.0"
@@ -12,6 +12,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "matthewd",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "JS_Components"
+  }
 }
