@@ -1,5 +1,5 @@
 =======================
-# Javascript Components
+ Javascript Components
 =======================
 
 There are a couple of Javascript guides copied here:
