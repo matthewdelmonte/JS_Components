@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <Head>
+        <Title>Just a Generic Page</Title>
+
+        <!-- Alert with 3 sec delay -->
+        <Script>
+            setTimeout(wakeUpUser, 3000);
+            function wakeUpUser() {
+                alert("Are you going to stare at this boring page forever?");
+            }
+        </Script>
+    </Head>
+    <Body>
+        <h1>Just a Generic Page</h1>
+        <P style="color: red;font-size: 24px;">Not a lot to read about <strong>here</strong>. I'm just an obligatory paragraph living in an example in a JavaScript book. I'm looking for something to make my life more exiting.</P>
+        
+        <!-- if/else statement with Shipping function -->
+        <script>
+            let price = "28.99";
+            let discount = "10";
+            let total =
+                price - (price * (discount / 100));
+            if (total > 25) {
+                setTimeout(function(){ alert("Free Shipping"); }, 6000);
+            } else {
+                setTimeout(function(){ alert("Shipping Isn't Free"); }, 6000);
+            }
+        </script>
+
+        <!-- if/else statement with dog weight function -->
+        <script>
+            let dog = {name: "Douglas", weight: 1};
+            if (dog.weight > 10) {
+                setTimeout(function(){ alert("WOOF WOOF"); }, 9000);
+            } else {
+                setTimeout(function(){ alert("woof woof"); }, 9000);
+            }
+        </script>
+    </Body>
+</html>
