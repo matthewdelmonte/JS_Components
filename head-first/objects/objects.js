@@ -35,3 +35,8 @@ if (mazda.year < 1965) {
 for (let i = 0; i < mazda.passenger; i++) {
     console.log(object = [i]);
 }
+
+// iterate through on object's properties using (for in)
+for (let prop in mazda) {
+    console.log(prop + ": " + mazda[prop]);
+}
