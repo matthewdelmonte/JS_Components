@@ -1,30 +1,3 @@
-let view = {
-    displayMessage: function(msg) {
-        let messageArea = document.getElementById("messageArea");
-        messageArea.innerHTML = msg;
-    },
-    displayHit: function(location) {
-        let cell = document.getElementById(location);
-        cell.setAttribute("class", "hit");
-    },
-    displayMiss: function(location) {
-        let cell = document.getElementById(location);
-        cell.setAttribute("class", "miss");
-    }
-};
-
-// test view code sequence
-/*view.displayMiss("00");
-view.displayHit("34");
-view.displayMiss("55");
-view.displayHit("12");
-view.displayMiss("25");
-view.displayHit("26");
-
-// test the displayMessage method
-view.displayMessage("Tap tap, is this thing on?");
-*/
-
 let model = {
     boardSize: 7,
     numShips: 3,
@@ -80,6 +53,62 @@ model.fire("12");
 model.fire("11");
 model.fire("10");*/
 
+let view = {
+    displayMessage: function(msg) {
+        let messageArea = document.getElementById("messageArea");
+        messageArea.innerHTML = msg;
+    },
+    displayHit: function(location) {
+        let cell = document.getElementById(location);
+        cell.setAttribute("class", "hit");
+    },
+    displayMiss: function(location) {
+        let cell = document.getElementById(location);
+        cell.setAttribute("class", "miss");
+    }
+};
+
+// test view code sequence
+/*view.displayMiss("00");
+view.displayHit("34");
+view.displayMiss("55");
+view.displayHit("12");
+view.displayMiss("25");
+view.displayHit("26");
+
+// test the displayMessage method
+view.displayMessage("Tap tap, is this thing on?");
+*/
+
+let controller = {
+    guesses: 0,
+    processGuess: function(guess) {
+        let location = parseGuess(guess);
+        if (location) {
+            this.guesses++;
+            let hit = model.fire(location);
+            if (hit && model.shipsSunk === model.numShips) {
+                view.displayMessage("You sank all my battleships, in " + this.guesses + " guesses");
+            }
+        }
+    }
+};
+
+// test the controller
+/*controller.processGuess("A0");
+
+controller.processGuess("A6");
+controller.processGuess("B6");
+controller.processGuess("C6");
+
+controller.processGuess("C4");
+controller.processGuess("D4");
+controller.processGuess("E4");
+
+controller.processGuess("B0");
+controller.processGuess("B1");
+controller.processGuess("B2");*/
+
 // helper function to parse a guess from the user
 function parseGuess(guess) {
     let alphabet = ["A", "B", "C", "D", "E", "F", "G"];
@@ -110,31 +139,27 @@ console.log(parseGuess("H0")); // invalid
 console.log(parseGuess("A7")); // invalid
 */
 
-let controller = {
-    guesses: 0,
-    processGuess: function(guess) {
-        let location = parseGuess(guess);
-        if (location) {
-            this.guesses++;
-            let hit = model.fire(location);
-            if (hit && model.shipsSunk === model.numShips) {
-                view.displayMessage("You sank all my battleships, in " + this.guesses + " guesses");
-            }
-        }
+function handleFireButton() {
+    let guessInput = document.getElementById("guessInput");
+    let guess = guessInput.value;
+    controller.processGuess(guess);
+
+    guessInput.value = "";
+}
+
+function handleKeyPress(e) {
+    let fireButton = document.getElementById("fireButton");
+    if (e.keyCode === 13) {
+        fireButton.click();
+        return false;
     }
-};
+}
 
-// test the controller
-controller.processGuess("A0");
+window.onclick = init;
 
-controller.processGuess("A6");
-controller.processGuess("B6");
-controller.processGuess("C6");
-
-controller.processGuess("C4");
-controller.processGuess("D4");
-controller.processGuess("E4");
-
-controller.processGuess("B0");
-controller.processGuess("B1");
-controller.processGuess("B2");
+function init() {
+    let fireButton = document.getElementById("fireButton");
+    fireButton.onclick = handleFireButton;
+    let guessInput = document.getElementById("guessInput");
+    guessInput.onkeypress = handleKeyPress;
+}
