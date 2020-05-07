@@ -180,6 +180,7 @@ console.log(parseGuess("H0")); // invalid
 console.log(parseGuess("A7")); // invalid
 */
 
+// handler functions react to events. they are also called callbacks and listeners.
 function handleFireButton() {
     let guessInput = document.getElementById("guessInput");
     let guess = guessInput.value.toUpperCase();
