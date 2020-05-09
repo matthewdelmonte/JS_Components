@@ -12,9 +12,9 @@
         }
 
         function showCoords(eventObj) {
-            let coords = document.getElementById("coors");
-
-
+            let coords = document.getElementById("coords");
+                let x = event.clientX;
+                let y = event.clientY;
             coords.innerHTML = "Map coordinates: " + x + ", " + y;
         }
     </script>
