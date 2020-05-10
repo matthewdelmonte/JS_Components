@@ -15,3 +15,6 @@ function bake(degrees) {
 }
 
 let status = bake(350);
+
+function setMode(mode) { };
+function setTemp(degrees) { };
