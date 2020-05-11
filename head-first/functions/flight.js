@@ -1,48 +1,123 @@
-let passengers = [
-  { name: "Kimberly Del Monte", paid: true },
-  { name: "Matthew Del Monte", paid: true },
-  { name: "Caleb Del Monte", paid: true },
-  { name: "Alyssa Del Monte", paid: false }
-];
+let passengers = [  { name: "Jane Doloop", paid: true, ticket: "coach" },
+					{ name: "Dr. Evel", paid: true, ticket: "firstclass" },
+					{ name: "Sue Property", paid: false, ticket: "firstclass" },
+					{ name: "John Funcall", paid: true, ticket: "premium" } ];
 
-function processPassengers(passengers, testFunction) {
-  for (let i = 0; i < passengers.length; i++) {
-    if (testFunction(passengers[i])) {
-      return false;
-    }
-  }
-  return true;
+function processPassengers(passengers, test) {
+	for (let i = 0; i < passengers.length; i++) {
+		if (test(passengers[i])) {
+			return false;
+		}
+	}
+	return true;
 }
 
 function checkNoFlyList(passenger) {
-  return (passenger.name === "Matthew Del Monte");
+	return (passenger.name === "Dr. Evel");
 }
 
 function checkNotPaid(passenger) {
-  return (!passenger.paid);
+	return (!passenger.paid);
 }
 
 function printPassenger(passenger) {
-  let message = passenger.name;
-  if (passenger.paid) {
-    message = message + " has paid.";
-  } else {
-    message = message + " has not paid.";
-  }
-  console.log(message);
-  return false;
+	let message = passenger.name;
+	if (passenger.paid) {
+		message = message + " has paid";
+	} else {
+		message = message + " has not paid";
+	}
+	console.log(message);
+	return false;
 }
 
-processPassengers(passengers, printPassenger);
-
+//
+// plane can only fly if every passenger is on the fly flist
+//
 let allCanFly = processPassengers(passengers, checkNoFlyList);
 if (!allCanFly) {
-  //console.log("The plane can't take off; we have a passenger on the no-fly list.");
-  document.getElementById("noFly").innerHTML = ("The plane can't take off; we have a passenger on the no-fly list.");
+	console.log("The plane can't take off: we have a passenger on the no fly list.");
 }
 
+//
+// plane can only fly if every passenger has paid
+//
 let allPaid = processPassengers(passengers, checkNotPaid);
 if (!allPaid) {
-  //console.log("The plane can't take off: not everyone has paid.");
-  document.getElementById("notPaid").innerHTML = ("The plane can't take off: not everyone has paid.");
+	console.log("The plane can't take off: not everyone has paid.");
 }
+
+//
+// we don't care about the result here; we're just using 
+// processPassengers to display the passenger list
+//
+processPassengers(passengers, printPassenger);
+
+function createDrinkOrder(passenger) {
+	let orderFunction;
+	if (passenger.ticket === "firstclass") {
+		orderFunction = function() {
+			alert("Would you like a cocktail or wine?");
+		};
+	} else if (passenger.ticket === "premium") {
+		orderFunction = function() {
+			alert("Would you like wine, cola or water?");
+		};
+	} else {
+		orderFunction = function() {
+			alert("Your choice is cola or water.");
+		};
+	}
+	return orderFunction;
+}
+
+
+function createDinnerOrder(passenger) {
+	let orderFunction;
+	if (passenger.ticket === "firstclass") {
+		orderFunction = function() {
+			alert("Would you like chicken or pasta?");
+		};
+	} else if (passenger.ticket === "premium") {
+		orderFunction = function() {
+			alert("Would you like a snack box or cheese plate?");
+		};
+	} else {
+		orderFunction = function() {
+			alert("Would you like peanuts or pretzels?");
+		};
+	}
+	return orderFunction;
+}
+
+function pickupTrash() {
+	alert("Can I have your trash, please?");
+}
+
+function serveCustomer(passenger) {
+	let getDrinkOrderFunction = createDrinkOrder(passenger);
+	let getDinnerOrderFunction = createDinnerOrder(passenger);
+
+	getDrinkOrderFunction();
+
+	// get dinner order
+	getDinnerOrderFunction();
+
+	getDrinkOrderFunction();
+	getDrinkOrderFunction();
+
+	// show movie
+
+	getDrinkOrderFunction();
+
+	// pick up trash
+	pickupTrash();
+}
+
+function servePassengers(passengers) {
+	for (let i = 0; i < passengers.length; i++) {
+		serveCustomer(passengers[i]);
+	}
+}
+
+servePassengers(passengers);
