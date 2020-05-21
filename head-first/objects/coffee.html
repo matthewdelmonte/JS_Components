@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Order</title>
+</head>
+<body>
+  <h1>Object Constructor <br/>Coffee Order</h1>
+  <div id="order1"></div>
+  <div id="order2"></div>
+  <script>
+    function Coffee(roast, ounces) {
+      this.roast = roast;
+      this.ounces = ounces;
+      this.getSize = function() {
+        if (this.ounces === 8) {
+          return "small";
+        } else if (this.ounces === 12) {
+          return "medium";
+        } else if (this.ounces === 16) {
+          return "large";
+        }
+      };
+      this.toString = function() {
+        return "You've ordered a " + this.getSize() + " " + this.roast + " coffee.";  
+      };
+    }
+
+    let houseBlend = new Coffee("House Blend", 12);
+    document.getElementById("order1").innerHTML = houseBlend.toString();
+
+    let darkRoast = new Coffee("Dark Roast", 16);
+    document.getElementById("order2").innerHTML = darkRoast.toString();
+
+  </script>
+</body>
+</html>
