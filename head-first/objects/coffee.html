@@ -33,6 +33,82 @@
     let darkRoast = new Coffee("Dark Roast", 16);
     document.getElementById("order2").innerHTML = darkRoast.toString();
 
+    let cadiParams = {
+      make: "GM",
+      model: "Cadillac",
+      year: 1955,
+      color: "tan",
+      passenger: 5,
+      convertible: false,
+      mileage: 12892
+    };
+    let taxiParams = {
+      make: "Webville Motors",
+      model: "Taxi",
+      year: 1965,
+      color: "yellow",
+      passenger: 4,
+      convertible: false,
+      mileage: 281341
+    };let mazdaParams = {
+      make: "Mazda",
+      model: 6,
+      year: 2015,
+      color: "blue",
+      passenger: 4,
+      convertible: false,
+      mileage: 89134
+    };let jaguarParams = {
+      make: "Jaguar",
+      model: "Sedan",
+      year: 2020,
+      color: "metalic grey",
+      passenger: 4,
+      convertible: false,
+      mileage: 452
+    };
+
+    let cadi = new Car(cadiParams);
+    if (cadi instanceof Car) {
+      console.log("Congrats, it's a Car!");
+    };
+    let taxi = new Car(taxiParams);
+    let mazda = new Car(mazdaParams);
+    let jaguar = new Car(jaguarParams);
+
+    function Car(params) {
+      this.make = params.make;
+      this.model = params.model;
+      this.year = params.year;
+      this.color = params.color;
+      this.passengers = params.passengers;
+      this.convertible = params.convertible;
+      this.mileage = params.mileage;
+      this.started = false;
+
+      this.start = function() {
+        this.started = true;
+      };
+      this.stop = function() {
+        this.started = false;
+      };
+      this.drive = function() {
+        if (this.started) {
+          console.log(this.make + this.model + " goes zoom zoom");
+        } else {
+          console.log("You need to start the engine first!");
+        }
+      }
+    };
+
+    let cars = [cadi, taxi, mazda, jaguar];
+
+    for(let i = 0; i < cars.length; i++) {
+      cars[i].start();
+      cars[i].drive();
+      cars[i].drive();
+      cars[i].stop();
+    }
   </script>
 </body>
 </html>
