@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prototypes</title>
+</head>
+<body>
+  <h1>Prototypes</h1>
+  <script>
+    // Dog constructor
+    function Dog(name, breed, weight) {
+      this.name = name;
+      this.breed = breed;
+      this.weight = weight;
+    }
+
+    // Add properties and methods to the dog prototype
+    Dog.prototype.species = "Canine";
+
+    Dog.prototype.bark = function() {
+      if (this.weight > 25) {
+        console.log(this.name + " says Woof!");
+      } else {
+        console.log(this.name + " says Yip!");
+      }
+    };
+
+    Dog.prototype.run = function() {
+      console.log("Run!");
+    };
+
+    Dog.prototype.wag = function() {
+      console.log("Wag!");
+    };
+
+    // All dogs are standing by default
+    Dog.prototype.sitting = false;
+
+    Dog.prototype.sit = function() {
+      if (this.sitting) {
+      console.log(this.name + " is already sitting");
+      } else {
+        this.sitting = true;
+        console.log(this.name + " is now sitting");
+      }
+    };
+
+    function ShowDog(name, breed, weight, handler) {
+      Dog.call(this, name, breed, weight);
+      this.handler = handler;
+    }
+    // Inherit the dog prototype properties and methods
+    ShowDog.prototype = new Dog();
+    // Set show dogs constructor object to show dog
+    ShowDog.prototype.constructor = ShowDog;
+    // Add properties and methods to the show dog prototype
+    ShowDog.prototype.league = "Webville";
+    ShowDog.prototype.stack = function() {
+      console.log("Stack");
+    };
+    ShowDog.prototype.bait = function() {
+      console.log("Bait");
+    };
+    ShowDog.prototype.gait = function(kind) {
+      console.log(kind + "ing");
+    };
+    ShowDog.prototype.groom = function() {
+      console.log("Groom");
+    };
+
+    // Create instances of the Dog object
+    let fido = new Dog("Fido", "Mixed", 38);
+    let fluffy = new Dog("Fluffy", "Poodle", 30);
+    let spot = new Dog("Spot", "Chihuahua", 10);
+    spot.bark = function() {
+      console.log(this.name + " says WOOF!");
+    };
+    let barnaby = new Dog("Barnaby", "Basset Hound", 55);
+    // Create instances of the ShowDog object
+    let scotty = new ShowDog("Scotty", "Scottish Terrier", 15, "Cookie");
+    let beatrice = new ShowDog("Beatrice", "Pomeranian", 5, "Hamilton");
+
+    // Call the methods for each dog. Each dog inherits the methods from the prototypes
+    fido.bark();
+    fluffy.bark();
+    spot.bark();
+    scotty.bark();
+    beatrice.bark();
+    scotty.gait("Walk");
+    beatrice.groom();
+    barnaby.sit();
+    barnaby.sit();
+  </script>
+</body>
+</html>
