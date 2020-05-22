@@ -14,5 +14,5 @@ let attr = planet.getAttribute("class");
     }
 }
 
-// once the window is fully loaded, the init function about will be called
+// once the window is fully loaded, the init function will be called
 window.onload = init;
