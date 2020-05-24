@@ -8,11 +8,19 @@
 <body>
   <h1>Prototypes</h1>
   <script>
-    // Dog constructor
-    function Dog(name, breed, weight) {
+    // Old way of creating a dog constructor pre ES6
+    /*function Dog(name, breed, weight) {
       this.name = name;
       this.breed = breed;
       this.weight = weight;
+    }*/
+    // Dog constructor
+    class Dog {
+      constructor(name, breed, weight) {
+        this.name = name;
+        this.breed = breed;
+        this.weight = weight;
+      }
     }
 
     // Add properties and methods to the dog prototype
@@ -45,10 +53,20 @@
         console.log(this.name + " is now sitting");
       }
     };
-
-    function ShowDog(name, breed, weight, handler) {
+    // Old way of creating a constuctor that inherits the Dog properties pre ES6
+    /*function ShowDog(name, breed, weight, handler) {
       Dog.call(this, name, breed, weight);
       this.handler = handler;
+    }*/
+
+    // New show dog class that inherits the dog class properties
+    // Keyword "extends" inherits the dog methods
+    // Keyword "super" calls the parent constructor's method and gives access to it's properties and methods
+    class ShowDog extends Dog {
+      constructor(name, breed, weight, handler) {
+        super(name, breed, weight);
+        this.handler = handler;
+      }
     }
     // Inherit the dog prototype properties and methods
     ShowDog.prototype = new Dog();
