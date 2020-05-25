@@ -8,11 +8,20 @@
 <body>
   <h1>Robot Prototype</h1>
   <script>
+    /*
     function Robot(name, year, owner) {
       this.name = name;
       this.year = year;
       this.owner = owner;
+    }*/
+    class Robot {
+      constructor(name, year, owner) {
+        this.name = name;
+        this.year = year;
+        this.owner = owner;
+      }
     }
+
     Robot.prototype.maker = "ObjectsRUs";
 
     Robot.prototype.speak = function() {
@@ -30,9 +39,8 @@
     let robby = new Robot("Robbie", 1956, "Dr. Morbius");
     let rosie = new Robot("Rosie", 1962, "George Jetson");
 
-    robby.onOffSwitch = function() {
-      let switch = 0;
-    };
+    robby.onOffSwitch = true;
+    
     robby.makeCoffee = function() {
       console.log("Running to Starbucks!");
     };
