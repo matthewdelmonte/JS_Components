@@ -18,3 +18,8 @@ let status = bake(350);
 
 function setMode(mode) { };
 function setTemp(degrees) { };
+
+function rectangle(x, y) {
+    console.log(x * y);
+}
+rectangle(4, 5);

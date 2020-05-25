@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arithmetic</title>
+  <style>
+    body {
+      background-color: bisque;
+    }
+    #div1 {
+      text-align: center;
+    }
+    #div2 {
+      display: inline-block;
+    }
+    #calc-answer {
+      margin-left: 10px;
+    }
+    #do-calculate {
+      margin-left: 176px;
+    }
+  </style>
+</head>
+<body>
+  <div id="div1">
+  <h1>Equation Calculator</h1>
+  <!--  In this example we aren't submitting form data to server, so no need for <form> element. -->
+  <div id="div2">
+    Number1: <input id="calc-x" type="text">
+    <br><br>
+    Number2: <input id="calc-y" type="text">
+    <br><br>
+    <button id="do-calculate" type="button">Calculate</button>
+    <br><br>
+    Answer: <input id="calc-answer" type="text">
+  </div>
+  </div>
+  <script type="text/javascript">
+
+  // First, define a function that can solve the equation:
+  function solveEquation(x, y) {
+    return x + y;
+}
+  //Next create a function that will react to the button click. It will parse the input, 
+  //do the calculation, and output the result:
+  function handleCalculate() {
+      let firstNum = parseFloat(document.getElementById('calc-x').value);
+      let secondNum = parseFloat(document.getElementById('calc-y').value);
+      let answer = solveEquation(firstNum, secondNum);
+      document.getElementById('calc-answer').value = answer.toString();
+  }
+  //Finally, hook up a click event to that button. To be unobtrusive with our JavaScript,
+  //don't add any inline event handlers (no intermingled HTML/JavaScript),
+  //do the event handling programmatically:
+  window.onload = function() { // when the window has loaded
+    // Assign the handleCalculate method to the button's click event
+    document.getElementById('do-calculate').addEventListener('click', handleCalculate);
+};
+  </script>
+</body>
+</html>
