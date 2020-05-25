@@ -5,5 +5,5 @@ class Person {
     this.age = options.age
   }
 }
-
+// module.exports is a node method "matthew's comment, not verified"
 module.exports = Person
