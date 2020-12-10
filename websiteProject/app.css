@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css?family=Homemade+Apple|Nunito&display=swap');
+
+body {
+  background-color: white;
+  font-family: 'Nunito', 'Roboto', sans-serif, helvetica;
+  font: black;
+}
+
+h2.center {
+  text-align: center;
+}
+
+#Anchors {
+  height: 282px;
+  width: 375px;
+}
+
+#nameBrand {
+  font-family: 'Homemade Apple';
+  font-size: 2.5em;
+}
+
+.categoryName {
+  font-size: 40px;
+  text-align: center;
+}
+
+#page {
+  background: linear-gradient(35deg, #cd7f32, #C5B358, hsl(180, 70%, 85%));
+  height: auto;
+  margin: auto;
+  /*margin: column;*/
+  min-height: auto;
+  min-width: auto;
+  width: 100%;
+}
+
+.top {
+  margin-left: 23px;
+}
+
+.topnav {
+  background-color: hsl(60, 56%, 91%); /* Only temporary, change as needed*/
+  display: inline-block;
+  overflow: hidden;
+  width: 100%;
+}
+
+.topnav a {
+  color: gray;
+  float: left;
+  font-size: 20px;
+  margin: auto;
+  padding: 16px;
+  text-align: left;
+  text-decoration: underline;
+}
+
+.topnav a:hover {
+  /*background-color: white;*/
+  color: black;
+}
+
+.flex-row {
+  display: flex;
+  /*flex: 1 1 auto;*/
+  flex-direction: row;
+  justify-content: center;
+  min-width: 48em;
+}
+
+.flex-column {
+  display: flex;
+  flex: 1 1 30%;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 30.66666666666667%;
+}
+
+.genericContainer {
+  min-width: 1110px;
+  background: linear-gradient(35deg, #cd7f32, #C5B358, hsl(180, 70%, 85%));
+}
+
+#collection {
+  background-color: orange;
+  /*background-color: #33faff;*/
+  display: flex; 
+  margin: auto;
+  /*max-width: 100%;*/
+  /*min-width: 920px;*/
+  padding-left: auto;
+  padding-right: auto;
+} 
+
+#collection1 {
+   /*background-color: #c2d6d6;*/
+   /*max-width: 920px;*/
+   min-width: 920px;
+   width: 100%;
+ } 
+
+#collection2 {
+   /*background-color: #c2d6d6;*/
+   /*max-width: 920px;*/
+   min-width: 920px;
+   width: 100%;
+ }
+
+#collection3 {
+   /*background-color: #c2d6d6;*/
+   /*max-width: 920px;*/
+   min-width: 920px;
+   width: 100%;
+ }
+
+#collection4 {
+   /*background-color: #c2d6d6;*/
+   /*max-width: 920px;*/
+   min-width: 920px;
+   width: 100%;
+ }
+
+.title {
+  text-align: center;
+  color: black;
+}
+
+.description {
+  text-align: center;
+  color: black;
+}
+
+.image {
+  border-radius: 6px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  max-height: 90%;
+  max-width: 100%; 
+} 
+
+.product {
+  font-family: sans-serif; 
+  font-size: 50px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding: 20px;
+  text-align: center;
+}
+
+.line {
+  float: top;
+  padding: 20px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 15%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#FormButton {
+  margin: 10px;
+}
+
+form {
+  margin: 10px;
+}
+
+.box {
+  background-color: white;
+  border-radius: 6px;
+  border-style: solid;
+  margin: 10px;
+  padding: auto;
+  width: 500px;
+}
+
+.box p {
+  padding: 10px;
+}
+
+.box h2 {
+  padding: 10px;
+}
+
+.box h3 {
+  padding: 10px;
+}
+
+.box form {
+  padding: 10px;
+}
+
+.box h4 {
+  padding: 10px;
+}
+
+/*.rotate {
+  transform: rotateZ(90deg);
+}*/
+
+.imageCard {
+  background-color: #ffffff; 
+  border-radius: 6px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  float: none;
+  margin: 20px;
+  padding: 20px;
+  transition: 0.3s;
+}
+
+.imageCard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+#bottom {
+  /*border-style: solid;*/
+  display: flex;
+  justify-content: center;
+  margin: column;
+  width: 100%;
+}
+
+/*.divbox {
+  /*border-color: #a3c2c2;
+  /*border-style: solid;
+  /*margin: 10px;
+  /*padding: 10px;
+  /*size: 100%;
+}*/
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: black;
+}
+ 
+a:visited {
+  color: lightslategray;
+}
